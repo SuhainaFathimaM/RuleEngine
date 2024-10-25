@@ -10,8 +10,7 @@ A dynamic rule engine application that evaluates user eligibility based on a cus
 4. [Project Structure](#project-structure)
 5. [Usage](#usage)
 6. [API Design](#api-design)
-7. [Sample Rules and Test Cases](#sample-rules-and-test-cases)
-8. [Future Enhancements](#future-enhancements)
+7. [Future Enhancements](#future-enhancements)
 
 ## Features
 
@@ -52,5 +51,46 @@ Example rule represented in AST:
    javac -cp ".;lib/mongo-java-driver-3.12.10.jar" com/ruleengine/*.java
    ```
    
-3.
+3. **Run the Application**:
+   ```bash
+   java -cp ".;lib/mongo-java-driver-3.12.10.jar" com.ruleengine.RuleEngineMain
+   ```
+
+## Project Structure
+RuleEngine/
+│
+├── com/ruleengine/
+│   ├── Node.java            # Defines AST node structure
+│   ├── RuleEvaluator.java   # Evaluates AST against user data
+│   ├── RuleParser.java      # Parses rule strings into AST
+│   ├── RuleCombiner.java    # Combines multiple ASTs
+│   ├── RuleDatabase.java    # Handles MongoDB operations
+│   └── RuleEngineMain.java  # Main entry point of the application
+│
+├── lib/
+│   └── mongo-java-driver-3.12.10.jar
+│
+├── .gitignore
+└── README.md
+
+## Usage
+### Running the Rule Engine
+1. **Create Rules** : Define rules using the create_rule function.
+2. **Combine Rules** : Use combine_rules to merge rules with logical operators.
+3. **Evaluate Rules** : Pass user data into evaluate_rule to check if conditions are met.
+
+## API Design
+1. create_rule(rule_string): Parses a rule string to create an AST.
+2. combine_rules(rules): Combines multiple rules using logical operators.
+3. evaluate_rule(json_data): Evaluates the AST against user-provided data.
+4. **Database Functions**:
+   - saveRule(name, rootNode): Saves an AST to MongoDB.
+   - getRule(name): Retrieves an AST from MongoDB by name.
+
+## Future Enhancements
+1. **User-defined Functions**: Add support for custom functions within rule logic.
+2. **Validation**: Implement validation for data types and missing fields.
+3. **Advanced Modifications**: Allow adding/removing sub-expressions within the AST.
+4. **UI Component**: Develop a simple web UI to define and test rules visually.
+
    
