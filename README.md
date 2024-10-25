@@ -57,7 +57,7 @@ Example rule represented in AST:
    ```
 
 ## Project Structure
-RuleEngine/
+RuleEngine/ \n
 │
 ├── com/ruleengine/
 │   ├── Node.java            # Defines AST node structure
