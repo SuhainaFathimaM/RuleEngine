@@ -46,4 +46,11 @@ Example rule represented in AST:
    git clone https://github.com/yourusername/RuleEngine.git
    cd RuleEngine
    ```
-2. 
+   
+2. **Compile the Project**:
+   ```bash
+   javac -cp ".;lib/mongo-java-driver-3.12.10.jar" com/ruleengine/*.java
+   ```
+   
+3.
+   
