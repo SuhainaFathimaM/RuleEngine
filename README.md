@@ -57,7 +57,8 @@ Example rule represented in AST:
    ```
 
 ## Project Structure
-RuleEngine/ \n
+```bash
+RuleEngine/ 
 │
 ├── com/ruleengine/
 │   ├── Node.java            # Defines AST node structure
@@ -72,6 +73,8 @@ RuleEngine/ \n
 │
 ├── .gitignore
 └── README.md
+
+```
 
 ## Usage
 ### Running the Rule Engine
